@@ -1,0 +1,62 @@
+Created workout log folder
+npm init
+
+
+//  *****   INSTALLS start              *****   \\
+
+npm installed (after installed npm update if you want to update the package versions)
+    - express
+    - sequelize
+    - pg
+
+in package.json create start script and install nodemon
+    "start": "nodemon"
+
+//  *****   INSTALLS end                *****   \\
+
+
+//  *****   Create index.js file start  *****   \\
+Require express 
+        const Express = require('express');
+        const app = express();
+
+        app.listen(##portnumber##), () => console.log())
+
+- - using a Capital letter for the Variable for clarity throughout code. 
+- - app.listen for server port number and to log to ensure it's working.
+
+//  *****   Create index.js file end    *****   \\
+
+//  *****   Start Server start          *****   \\
+
+run npm start, and verify console log show port "message"
+    
+
+
+//  ***** ***** *****  Start Server start   *****  *****   *****   \\
+
+- - create db.js file
+
+const Sequelize = require('sequelize');
+
+                        (" db-name ", " username ", " password ",  )    
+
+const db = new Sequelize( 'workoutLogBB', 'postgres', 'password', {
+    host:    'localhost',
+    dialect: 'postgres'
+});
+
+module.exports = db;
+--this allows us to require this file in other files
+--the purpose is so we can separate 10000's of line of code into organized files. 
+
+--now we must require the db file in "index.js"
+const database = require('/db');
+
+--then we sync the db in index.js file with 
+database.sync();
+
+
+//  *****   Controller folder   *****   \\
+
+
